@@ -4,7 +4,7 @@
 
 ### 让 AI 为你写一部完整的中文小说
 
-[![Version](https://img.shields.io/badge/version-2.0-blue.svg)](https://github.com/PenglongHuang/chinese-novelist-skill/releases/tag/v2.0)
+[![Version](https://img.shields.io/badge/version-2.3.1-blue.svg)](https://github.com/PenglongHuang/chinese-novelist-skill/releases)
 [![Claude Code Skill](https://img.shields.io/badge/Claude_Code-Skill-blue)](https://claude.com/claude-code)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
@@ -265,28 +265,10 @@ chinese-novelist/
 
 ---
 
-## 🔄 版本更新
+## 🔄 版本与路线
 
-### v2.0 重大升级
-
-**核心架构重构**
-- ✅ 从单一 5 问流程升级为**三层递进式问答**（Layer 1 必答 + Layer 2 可选深度定制）
-- ✅ 新增 **Phase 0 初始化**：用户偏好跨会话记忆、中断续写检测
-- ✅ 新增 **写作模式选择**：串行/子Agent并行/Agent Teams 三种模式
-- ✅ 新增 **Phase 4 自动校验**：字数与连贯性自动检查，不合格自动修复
-- ✅ 流程文档化：将详细执行指令从 SKILL.md 拆分到 `references/flows/` 独立维护
-
-**新增功能**
-- 🧠 **偏好记忆系统**：自动学习用户创作偏好（题材类型、叙事风格、章节数量倾向等）
-- ⏸️ **中断续写**：自动检测未完成项目，支持从断点继续创作
-- 📋 **写作计划 JSON**：机器可读的写作状态文件，支持并行写作协调
-- 🔢 **字数检查脚本**：skill 安装目录下的 `scripts/check_chapter_wordcount.py` 自动验证每章 3000-5000 字要求
-
-**文档重组**
-- 📁 `references/flows/`：新增 7 个流程文档（phase0-4 + shared-infrastructure）
-- 📁 `references/guides/`：重组 8 个写作指南文档
-
-**查看完整变更**：[v2.0 提交记录](https://github.com/PenglongHuang/chinese-novelist-skill/commits/v2.0/)
+- 📜 **更新日志**：[Releases](https://github.com/PenglongHuang/chinese-novelist-skill/releases) — 每个版本的完整变更
+- 🗺️ **Roadmap**：[ROADMAP.md](ROADMAP.md) — 已完成 / 进行中 / 计划中
 
 ---
 
