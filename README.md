@@ -200,9 +200,11 @@ AI 自动生成大纲（7列章节规划）、人物档案、写作计划 JSON�
 chinese-novelist/
 ├── user-preferences.json              # 用户偏好（跨项目共享）
 └── 20260412-143000-午夜列车/
-    ├── 01-大纲.md                      # 故事概述、章节规划（7列模板）
+    ├── 01-大纲.md                      # 故事概述、章节规划（7列模板）+ 设定词典
     ├── 00-人物档案.md                  # 主角、反派、配角档案
     ├── 02-写作计划.json                # 机器可读的写作计划（v2）
+    ├── 03-文风基准.md                  # 文风指纹、基准段落、AI味负面清单
+    ├── 99-章节摘要.md                  # 逐章摘要（连贯性参考，随进度追加）
     ├── 第01章-最后一班列车.md
     ├── 第02章-消失的乘客.md
     └── ...
@@ -241,7 +243,7 @@ chinese-novelist/
 |------|------|
 | `phase0-initialization.md` | Phase 0：初始化与偏好加载 |
 | `phase1-layer1-core.md` | Phase 1 Layer 1：核心定位问答（Q1-Q3） |
-| `phase1-layer2-customize.md` | Phase 1 Layer 2：深度定制问答（Q4-Q8） |
+| `phase1-layer2-customize.md` | Phase 1 Layer 2：深度定制问答 |
 | `phase2-planning.md` | Phase 2：规划与写作计划生成 |
 | `phase3-writing.md` | Phase 3：疯狂创作（三种写作模式） |
 | `phase4-validation.md` | Phase 4：自动校验与修复 |
@@ -278,7 +280,7 @@ chinese-novelist/
 - 🧠 **偏好记忆系统**：自动学习用户创作偏好（题材类型、叙事风格、章节数量倾向等）
 - ⏸️ **中断续写**：自动检测未完成项目，支持从断点继续创作
 - 📋 **写作计划 JSON**：机器可读的写作状态文件，支持并行写作协调
-- 🔢 **字数检查脚本**：`scripts/check_chapter_wordcount.py` 自动验证每章 3000-5000 字要求
+- 🔢 **字数检查脚本**：skill 安装目录下的 `scripts/check_chapter_wordcount.py` 自动验证每章 3000-5000 字要求
 
 **文档重组**
 - 📁 `references/flows/`：新增 7 个流程文档（phase0-4 + shared-infrastructure）
