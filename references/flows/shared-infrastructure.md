@@ -111,18 +111,26 @@
 
 ## 字数检查脚本
 
-使用 `{skillBaseDir}/scripts/check_chapter_wordcount.py` 检查章节字数。`{skillBaseDir}` 指 SKILL.md 所在的 skill 安装根目录（如 `~/.claude/skills/chinese-novelist`）——脚本不在用户项目内，**必须用 skill 安装目录的绝对路径调用**，禁止写相对路径 `scripts/...`（那只存在于 skill 源码目录，用户项目解析不到）。
+使用 `{skillBaseDir}/scripts/check_chapter_wordcount.mjs` 检查章节字数（Node 脚本，零依赖）。`{skillBaseDir}` 指 SKILL.md 所在的 skill 安装根目录（如 `~/.claude/skills/chinese-novelist`）——脚本不在用户项目内，**必须用 skill 安装目录的绝对路径调用**，禁止写相对路径 `scripts/...`（那只存在于 skill 源码目录，用户项目解析不到）。
 
 ```bash
 # 检查单个章节（--json 输出机读结果，含 word_count 与达标状态）
-python {skillBaseDir}/scripts/check_chapter_wordcount.py ./chinese-novelist/项目文件夹/第01章.md --json
+node {skillBaseDir}/scripts/check_chapter_wordcount.mjs ./chinese-novelist/项目文件夹/第01章.md --json
 
 # 检查所有章节（按章号数值排序，第10章不会排在第2章前面）
-python {skillBaseDir}/scripts/check_chapter_wordcount.py --all ./chinese-novelist/项目文件夹/ --json
+node {skillBaseDir}/scripts/check_chapter_wordcount.mjs --all ./chinese-novelist/项目文件夹/ --json
 
 # 自定义最小字数
-python {skillBaseDir}/scripts/check_chapter_wordcount.py ./chinese-novelist/项目文件夹/第01章.md 3500 --json
+node {skillBaseDir}/scripts/check_chapter_wordcount.mjs ./chinese-novelist/项目文件夹/第01章.md 3500 --json
 ```
+
+### 环境要求与降级
+
+脚本依赖 Node（≥16；`npx skills add` 安装本 skill 的用户必然已满足）。若调用报 `node: command not found`（Windows 为「'node' 不是内部或外部命令」）：
+
+1. 停止自动检查，提示用户安装 Node.js：<https://nodejs.org/>；
+2. **禁止**改为 Agent 自行阅读章节估算字数——模型计数不可靠，脚本存在的意义就是确定性；
+3. 用户安装前如需继续写作，字数以写作目标为准，并在完稿报告中注明「字数未经脚本校验」。
 
 ### 退出码
 
