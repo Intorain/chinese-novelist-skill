@@ -51,7 +51,7 @@
 14. **字数检查** — 必须使用脚本检查：
 
     ```bash
-    python {skillBaseDir}/scripts/check_chapter_wordcount.py <章节文件路径> --json
+    node {skillBaseDir}/scripts/check_chapter_wordcount.mjs <章节文件路径> --json
     ```
 
     退出码：0=达标，1=不足，2=错误。优先解析 `--json` 输出中的 `word_count` 填入写作计划，不要解析文本报告
