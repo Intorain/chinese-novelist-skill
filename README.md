@@ -4,7 +4,7 @@
 
 ### 让 AI 为你写一部完整的中文小说
 
-[![Version](https://img.shields.io/badge/version-2.3.1-blue.svg)](https://github.com/PenglongHuang/chinese-novelist-skill/releases)
+[![Version](https://img.shields.io/badge/version-2.3.2-blue.svg)](https://github.com/PenglongHuang/chinese-novelist-skill/releases)
 [![Claude Code Skill](https://img.shields.io/badge/Claude_Code-Skill-blue)](https://claude.com/claude-code)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
